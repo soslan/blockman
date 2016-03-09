@@ -1,0 +1,207 @@
+@charset "utf-8";
+#hostname{
+	font-size:20px;
+}
+
+#sections{
+	display: flex;
+	flex-direction: row;
+	position: relative;
+}
+
+#sections > *{
+	padding:10px;
+	min-width:150px;
+}
+
+.entry{
+	display: flex;
+	//padding: 5px;
+	cursor: pointer;
+	white-space: nowrap;
+	//transition: background-color .05s, color .05s;
+}
+
+.entry > *{
+	margin-right: 5px;
+	padding: 5px;
+}
+
+.entry:hover,
+.entry:active,
+.entry.active{
+	background-color: #eee;
+	//color:white;
+}
+
+#new .entry.active,
+#new .entry:active{
+	background-color: #c00;
+}
+
+.entry > .name,
+.entry > .entry-name{
+	flex:1;
+}
+
+.more{
+	cursor:pointer;
+	float: right;
+	order: 1000;
+	margin-right: 0;
+	//color: gray;
+}
+
+.more:after{
+	content: "▼ ";
+}
+
+.more.fold:after{
+	content: "▲ ";
+}
+
+.entry-controls{
+	border: 1px solid #999;
+	border-top: 0;
+	//margin:0 5px 5px;
+	padding:5px;
+	background-color: whitesmoke;
+	height: 0;
+	display: none;
+}
+
+.entry-controls > *:not(:last-child){
+	margin-bottom: 5px;
+}
+
+#new .entry-controls{
+	border-color:#c00;
+}
+
+.entry-controls.expanded{
+	height: auto;
+	display: block;
+}
+
+.dd{
+	display: flex;
+	flex-direction: row;
+	cursor: default;
+	position: relative;
+	background-color: white;
+	padding: 5px;
+	border: 1px solid #aaa;
+	white-space: nowrap;
+}
+
+.dd-current-value{
+	flex:1;
+}
+
+.dd-options{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	display: none;
+	background-color: white;
+	width: 100%;
+	padding: 5px 0;
+	box-sizing: border-box;
+	border: 1px solid #aaa;
+	z-index: 1001;
+}
+
+.dd.active > .dd-options{
+	display: block;
+}
+
+.dd .dd-option{
+	cursor: pointer;
+	padding: 5px;
+}
+
+.dd .dd-option:hover{
+	color: white;
+	background-color: #aaa;
+}
+
+.btn{
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	background-color: #3465a4;
+	color: white;
+}
+
+.btn-save{
+	background-color: #73d216;
+	color: white;
+}
+
+.ctl{
+	font-weight: bold;
+	padding: 5px;
+}
+
+.ctl.blocked{
+	color: red;
+}
+
+.ctl.blocked:after{
+	//content: "blocked";
+}
+
+.ctl.blocked:hover:after{
+	//content: "allow";
+}
+
+.ctl.blocked:hover{
+	color: white;
+	background-color: red;
+}
+
+.ctl.allowed{
+	color: blue;
+}
+
+.ctl.allowed:hover{
+	color: white;
+	background-color: blue;
+}
+
+/* Advanced */
+#advanced-wrap{
+	background-color: white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: none;
+}
+
+.controls > *{
+	margin-bottom: 5px;
+}
+
+/* Segmented control */
+.segmented{
+	display: flex;
+}
+
+.segmented > *{
+	flex: 1;
+	padding: 5px;
+	border: 1px solid #999;
+	cursor: pointer;
+	text-align: center;
+}
+
+.segmented > *.active{
+	background-color: #999;
+	color: white;
+}
+
+.segmented > *:not(:last-child){
+	border-right: none;
+}
